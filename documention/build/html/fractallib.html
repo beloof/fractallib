@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>fractallib package &#8212; fractallib 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=61cd365c" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="fractallib-package">
+<h1>fractallib package<a class="headerlink" href="#fractallib-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-fractallib.fractal">
+<span id="fractallib-fractal-module"></span><h2>fractallib.fractal module<a class="headerlink" href="#module-fractallib.fractal" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="fractallib.fractal.fractal">
+<span class="sig-prename descclassname"><span class="pre">fractallib.fractal.</span></span><span class="sig-name descname"><span class="pre">fractal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fractallib.fractal.fractal" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates the fractal value for a given complex number z and constant c, this value tells us how fast the number diverges (escapes).
+formula:  Z_n+1 = Z_n^2 + c</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z</strong> (<em>complex</em>) – Z0</p></li>
+<li><p><strong>c</strong> (<em>complex</em>) – The constant used in the fractal formula.</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – The maximum number of iterations, increase with caution.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The number of iterations before z escapes the threshold.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fractallib.fractal.fractal_matrix">
+<span class="sig-prename descclassname"><span class="pre">fractallib.fractal.</span></span><span class="sig-name descname"><span class="pre">fractal_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mandel_or_julia</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fractallib.fractal.fractal_matrix" title="Link to this definition">¶</a></dt>
+<dd><p>Generate a matrix of fractal values for a grid of complex numbers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z</strong> (<em>complex</em>) – The starting complex number if mandel_or_julia is set to True, not important otherwise.</p></li>
+<li><p><strong>c</strong> (<em>complex</em>) – The constant used in the fractal formula if mandel_or_julia is set to False, not important otherwise.</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – The maximum number of iterations.</p></li>
+<li><p><strong>offset</strong> (<em>tuple</em>) – The offset for positioning the fractal, this is because the mandelbrot set is not centered while julia is.</p></li>
+<li><p><strong>mandel_or_julia</strong> (<em>bool</em>) – Flag to determine which fractal to compute, True for mandelbrot False for julia.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A 2D array of fractal values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fractallib.fractal.get_image">
+<span class="sig-prename descclassname"><span class="pre">fractallib.fractal.</span></span><span class="sig-name descname"><span class="pre">get_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'result.png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m_or_j</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fractallib.fractal.get_image" title="Link to this definition">¶</a></dt>
+<dd><p>Generate and save a fractal image to a specified file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – The file path to save the image.</p></li>
+<li><p><strong>m_or_j</strong> (<em>bool</em>) – Flag to determine whether to create a Mandelbrot or Julia fractal.</p></li>
+<li><p><strong>z</strong> (<em>complex</em>) – The starting complex number.</p></li>
+<li><p><strong>c</strong> (<em>complex</em>) – The constant used in the fractal formula.</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – The maximum number of iterations.</p></li>
+<li><p><strong>resolution</strong> (<em>int</em>) – The resolution of the generated image.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fractallib.fractal.is_in_julia">
+<span class="sig-prename descclassname"><span class="pre">fractallib.fractal.</span></span><span class="sig-name descname"><span class="pre">is_in_julia</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fractallib.fractal.is_in_julia" title="Link to this definition">¶</a></dt>
+<dd><p>Check if a complex number is in the Julia set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z</strong> (<em>complex</em>) – The complex number to be evaluated.</p></li>
+<li><p><strong>c</strong> (<em>complex</em>) – The constant used in the fractal formula.</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – The maximum number of iterations.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if z is in the Julia set, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fractallib.fractal.is_in_mandelbrot">
+<span class="sig-prename descclassname"><span class="pre">fractallib.fractal.</span></span><span class="sig-name descname"><span class="pre">is_in_mandelbrot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fractallib.fractal.is_in_mandelbrot" title="Link to this definition">¶</a></dt>
+<dd><p>Check if a complex number is in the Mandelbrot set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z</strong> (<em>complex</em>) – The complex number to be evaluated.</p></li>
+<li><p><strong>c</strong> (<em>complex</em>) – The constant used in the fractal formula.</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – The maximum number of iterations.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if z is in the Mandelbrot set, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fractallib.fractal.julia_matrix">
+<span class="sig-prename descclassname"><span class="pre">fractallib.fractal.</span></span><span class="sig-name descname"><span class="pre">julia_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fractallib.fractal.julia_matrix" title="Link to this definition">¶</a></dt>
+<dd><p>Generate a Julia fractal matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>c</strong> (<em>complex</em>) – The constant used in the fractal formula.</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – The maximum number of iterations.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A 2D array of Julia fractal values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fractallib.fractal.mandelbrot_matrix">
+<span class="sig-prename descclassname"><span class="pre">fractallib.fractal.</span></span><span class="sig-name descname"><span class="pre">mandelbrot_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fractallib.fractal.mandelbrot_matrix" title="Link to this definition">¶</a></dt>
+<dd><p>Generate a Mandelbrot fractal matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z</strong> (<em>complex</em>) – The starting complex number.</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – The maximum number of iterations.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A 2D array of Mandelbrot fractal values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fractallib.fractal.show_initial">
+<span class="sig-prename descclassname"><span class="pre">fractallib.fractal.</span></span><span class="sig-name descname"><span class="pre">show_initial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fractallib.fractal.show_initial" title="Link to this definition">¶</a></dt>
+<dd><p>Display the initial interactive plot for generating fractals. should give you a feel for what the image might look like before making the final render.
+you can dynamically change the starting value (z for mandelbrot, c for julia) as well as switch between mandelbrot set and julia set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – The maximum number of iterations for fractal calculation.</p></li>
+<li><p><strong>resolution</strong> (<em>int</em>) – The resolution of the displayed plot.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-fractallib">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-fractallib" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">fractallib</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, LASSIOUED Badis.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/fractallib.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

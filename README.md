@@ -1,14 +1,30 @@
+
 # fractallib
 
-fractallib is a Python package for generating and visualizing Mandelbrot and Julia fractals. It provides an interactive GUI with adjustable parameters and can export high-resolution images of the generated fractals.
+fractallib is (my homework) a Python package for generating and visualizing Mandelbrot and Julia fractals. It provides an interactive GUI with adjustable parameters and can export high-resolution images of the generated fractals. please enjoy
 
 ## Table of Contents
+- [Math](#math)
 - [Installation](#installation)
 - [Features](#features)
 - [Usage](#usage)
 - [Examples](#examples)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
+
+## Math
+
+The images describe how fast the series \( Z_n \) grows.
+
+**Formula:**
+Z_{n+1} = Z_n^2 + C
+
+The darker the point, the faster it escaped the threshold \( |Z| <= 2 \).  
+White points never escaped.
+
+- To represent the Mandelbrot set, \( Z_0 \) is fixed while \( C \) takes values in a square-shaped region, centered around (0,0) with an edge of length 4.
+- To represent the Julia set, \( C \) is fixed while \( Z_0 \) covers the previously stated region.
+
 
 ## Installation
 
@@ -81,5 +97,3 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 ## Acknowledgements
 
 Special thanks to the Python, matplotlib and numpy communities.
-
-
