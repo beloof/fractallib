@@ -36,8 +36,8 @@ def main():
         get_image(
             path=args.output, 
             m_or_j=m_or_j, 
-            z=0 if m_or_j else None, 
-            c=c if not m_or_j else None, 
+            z=c, 
+            c=c, 
             n=args.iterations, 
             resolution=args.resolution
         )
