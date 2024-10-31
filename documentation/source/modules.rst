@@ -5,4 +5,3 @@ fractallib
    :maxdepth: 4
 
    fractallib
-   setup

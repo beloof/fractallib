@@ -14,9 +14,16 @@ setup(
     author_email='lassiouedbadiss@yahoo.com',
     url='https://github.com/beloof/fractallib',
     license="MIT",
+    entry_points={
+        "console_scripts": [
+            "fractallib=fractallib.__main__:main",
+        ],
+    },
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
     ],
 )
+
+
