@@ -119,7 +119,7 @@ python -m fractallib mandelbrot -r 200 -n 20 --show
 
 ## Documentation
 
-Full documentaion available at [fractallib documentation](documentation/build/html/fractallib.html).  
+Full documentaion available at [fractallib documentation](https://github.com/beloof/fractallib/blob/main/documentation/build/html/fractallib.html).  
   
 To see the available commands in Cmd run:
 
