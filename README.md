@@ -57,6 +57,11 @@ from fractallib import get_image
 # Generate and save the Mandelbrot fractal
 get_image(resolution=2000, n=50)
 ```
+Or type in Cmd:
+
+```
+python -m fractallib mandelbrot -r 2000 -n 50
+```
 
 ### Generating and Exporting a Julia Fractal
 
@@ -67,6 +72,10 @@ from fractallib import get_image
 get_image(c=-0.4 + 0.6j, resolution=2000, n=50, path='julia_fractal.png')
 ```
 
+Or:
+```
+python -m fractallib julia --real -0.4 --imaginary 0.6 -r 2000 -n 50 -o julia_fractal.png
+```
 
 ## Examples
 
@@ -78,10 +87,21 @@ Here are some example commands for different types of fractals:
 fractallib.get_image(resolution=1000, n=100)
 ```
 
+Or
+
+```
+python -m fractallib mandelbrot -r 1000 -n 100
+```
+
 ### High-Resolution Julia Set:
 
 ```
 fractallib.get_image(c=-0.8 + 0.156j, resolution=3000, n=100, path='high_res_julia.png')
+```
+Or
+
+```
+python -m fractallib julia --real -0.8 --imaginary 0.156 -r 3000 -n 100 -o high_res_julia.png
 ```
 
 ### Interactive GUI:
@@ -91,10 +111,21 @@ Run an interactive session with sliders to adjust fractal parameters in real-tim
 ```
 fractallib.show_initial(resolution=200, n=20)
 ```
+Or
+
+```
+python -m fractallib mandelbrot -r 200 -n 20 --show
+```
 
 ## Documentation
 
-Full documentaion available at [fractallib documentation](documentation/build/html/fractallib.html).
+Full documentaion available at [fractallib documentation](documentation/build/html/fractallib.html).  
+  
+To see the available commands in Cmd run:
+
+```
+python -m fractallib -h
+```
 
 ## License
 
