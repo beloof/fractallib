@@ -17,10 +17,10 @@ def main():
         "-o", "--output", type=str, default="result.png", help="Output file path for the generated image"
     )
     parser.add_argument(
-        "-n", "--iterations", type=int, default=50, help="Maximum number of iterations"
+        "-n", "--iterations", type=int, default=20, help="Maximum number of iterations"
     )
     parser.add_argument(
-        "-r", "--resolution", type=int, default=2000, help="Resolution of the generated image"
+        "-r", "--resolution", type=int, default=200, help="Resolution of the generated image"
     )
     parser.add_argument(
         "--show", action="store_true", help="Show an interactive preview of the fractal"
