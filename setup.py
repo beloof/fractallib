@@ -11,7 +11,6 @@ setup(
     ],
     description='A package to generate Mandelbrot and Julia fractals',
     author='LASSIOUED Badis',
-    author_email='lassiouedbadiss@yahoo.com',
     url='https://github.com/beloof/fractallib',
     license="MIT",
     entry_points={
